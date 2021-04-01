@@ -64,5 +64,10 @@ namespace StockBot
 
             return db;
         }
+
+        public string printTest()
+        {
+            return "abc";
+        }
     }
 }

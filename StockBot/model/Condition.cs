@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace StockBot.model
 {
-    class Condition
+    public class Condition
     {
+        public int index { get; set; }
     }
 }

@@ -107,6 +107,8 @@
     <Compile Include="Bot.Designer.cs">
       <DependentUpon>Bot.cs</DependentUpon>
     </Compile>
+    <Compile Include="KiwoomAPI\ConditionEventHandler.cs" />
+    <Compile Include="model\Condition.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Bot.resx">
@@ -162,7 +164,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="controller\" />
-    <Folder Include="model\" />
     <Folder Include="utils\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -82,5 +82,10 @@ namespace StockBot
         {
             return yesterdayHighestVolumeItemButton;
         }
+
+        public ConditionEventHandler getConditionEventHandler()
+        {
+            return this.conditionEventHandler;
+        }
     }
 }

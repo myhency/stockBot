@@ -1,4 +1,5 @@
 ﻿using NLog;
+using StockBot.KiwoomAPI;
 using StockBot.view;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace StockBot.controller
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
         private ICollectItemsView iCollectItemView;
+        private ConditionEventHandler conditionEventHandler;
         private Button todayJumpItemButton;
         private Button yesterdayHighestVolumeItemButton;
 
@@ -24,6 +26,7 @@ namespace StockBot.controller
         }
         private void initialize()
         {
+            this.conditionEventHandler = iCollectItemView.getConditionEventHandler();
             this.todayJumpItemButton = iCollectItemView.getTodayJumpItemButton();
             this.yesterdayHighestVolumeItemButton = iCollectItemView.getYesterdayHighestVolumeItemButton();
 
@@ -34,6 +37,7 @@ namespace StockBot.controller
         private void todayJumpItemButton_Click(object sender, EventArgs e)
         {
             logger.Debug("todayJumpItemButton_Click");
+            this.conditionEventHandler.test();
         }
 
         private void yesterdayHighestVolumeItemButton_Click(object sender, EventArgs e)

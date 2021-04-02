@@ -74,5 +74,10 @@ namespace StockBot.KiwoomAPI
                 }
             }
         }
+
+        public void test()
+        {
+            logger.Debug("test");
+        }
     }
 }

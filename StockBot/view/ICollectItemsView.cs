@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StockBot.KiwoomAPI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,6 @@ namespace StockBot.view
     {
         Button getTodayJumpItemButton();
         Button getYesterdayHighestVolumeItemButton();
+        ConditionEventHandler getConditionEventHandler();
     }
 }

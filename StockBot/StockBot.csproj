@@ -109,9 +109,12 @@
     </Compile>
     <Compile Include="controller\CollectItemsViewController.cs" />
     <Compile Include="KiwoomAPI\ConditionEventHandler.cs" />
+    <Compile Include="KiwoomAPI\Opt10001EventHandler.cs" />
     <Compile Include="model\Condition.cs" />
+    <Compile Include="model\Opt10001VO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="utils\MariaDB.cs" />
     <Compile Include="view\ICollectItemsView.cs" />
     <EmbeddedResource Include="Bot.resx">
       <DependentUpon>Bot.cs</DependentUpon>
@@ -164,8 +167,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="utils\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

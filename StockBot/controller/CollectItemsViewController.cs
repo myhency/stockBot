@@ -32,6 +32,7 @@ namespace StockBot.controller
             this.todayJumpItemButton = iCollectItemView.getTodayJumpItemButton();
             this.yesterdayHighestVolumeItemButton = iCollectItemView.getYesterdayHighestVolumeItemButton();
             this.toolStripProgressBar = iCollectItemView.getToolStripProgressBar();
+            this.toolStripStatusLabel = iCollectItemView.getToolStripStatusLabel();
 
             this.todayJumpItemButton.Click += todayJumpItemButton_Click;
             this.yesterdayHighestVolumeItemButton.Click += yesterdayHighestVolumeItemButton_Click;
@@ -40,15 +41,21 @@ namespace StockBot.controller
         private void todayJumpItemButton_Click(object sender, EventArgs e)
         {
             this.toolStripProgressBar.Value = 0;
+            this.toolStripStatusLabel.Text = "조회중...";
             logger.Debug("todayJumpItemButton_Click");
-            this.conditionEventHandler.searchTodayJumpItem();
+            this.conditionEventHandler.searchItems("총총걸음");
             this.toolStripStatusLabel.Text = "조회완료.";
             this.toolStripProgressBar.Value = 100;
         }
 
         private void yesterdayHighestVolumeItemButton_Click(object sender, EventArgs e)
         {
+            this.toolStripProgressBar.Value = 0;
+            this.toolStripStatusLabel.Text = "조회중...";
             logger.Debug("yesterdayHighestVolumeItemButton_Click");
+            this.conditionEventHandler.searchItems("어제돈이몰린종목");
+            this.toolStripStatusLabel.Text = "조회완료.";
+            this.toolStripProgressBar.Value = 100;
         }
     }
 }

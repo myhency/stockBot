@@ -129,7 +129,7 @@ namespace StockBot
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(795, 398);
+            this.tabPage3.Size = new System.Drawing.Size(795, 374);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "관심종목 1";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -173,7 +173,7 @@ namespace StockBot
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(795, 360);
+            this.dataGridView1.Size = new System.Drawing.Size(795, 336);
             this.dataGridView1.TabIndex = 0;
             // 
             // tabPage4
@@ -185,7 +185,7 @@ namespace StockBot
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(795, 398);
+            this.tabPage4.Size = new System.Drawing.Size(795, 374);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "관심종목 2";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -328,7 +328,7 @@ namespace StockBot
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(795, 360);
+            this.dataGridView2.Size = new System.Drawing.Size(795, 336);
             this.dataGridView2.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn1
@@ -386,7 +386,7 @@ namespace StockBot
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(795, 398);
+            this.tabPage5.Size = new System.Drawing.Size(795, 374);
             this.tabPage5.TabIndex = 6;
             this.tabPage5.Text = "잔고";
             this.tabPage5.UseVisualStyleBackColor = true;

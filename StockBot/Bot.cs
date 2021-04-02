@@ -40,6 +40,8 @@ namespace StockBot
         private void login()
         {
             logger.Info("로그인 시도 중...");
+            toolStripProgressBar.Value = 50;
+            toolStripStatusLabel.Text = "로그인 시도 중...";
             axKHOpenAPI1.CommConnect();
         }
 
@@ -53,30 +55,16 @@ namespace StockBot
                  *  - DB를 접속해서 어제 수집한 종목들을 gridview에 추가해 준다.
                  *  - Handler 들을 초기화한다?
                  */
+                toolStripProgressBar.Value = 100;
                 logger.Info($"로그인 성공. {DateTime.Now}");
                 toolStripStatusLabel.Text = $"로그인 성공. {DateTime.Now}";
-                toolStripProgressBar.Value = 100;
 
-                var db = connectionFactory();
-                db.Open();
                 conditionEventHandler = new ConditionEventHandler(this, axKHOpenAPI1);
                 collectItemsViewController = new CollectItemsViewController(this);
             }
         }
 
-        private IDbConnection connectionFactory()
-        {
-            /**
-             * Dapper 이용방법 참고
-             *  - https://jacking.tistory.com/1117
-             *  - https://github.com/StackExchange/Dapper
-             */
-            string ConnString = "server=localhost;port=3306;database=stockdb;uid=root;password=037603";
-
-            IDbConnection db = new MySql.Data.MySqlClient.MySqlConnection(ConnString);
-
-            return db;
-        }
+        
 
         public Button getTodayJumpItemButton()
         {

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace StockBot.KiwoomAPI
@@ -14,10 +15,12 @@ namespace StockBot.KiwoomAPI
         private static Logger logger = LogManager.GetCurrentClassLogger();
         private AxKHOpenAPILib.AxKHOpenAPI axKHOpenAPI1;
         private List<Condition> conditionList;
+        private Opt10001EventHandler opt10001EventHandler;
 
         public ConditionEventHandler(object sender, AxKHOpenAPI axKHOpenAPI1)
         {
             this.axKHOpenAPI1 = axKHOpenAPI1;
+            this.opt10001EventHandler = new Opt10001EventHandler(sender, this.axKHOpenAPI1);
 
             initialize();
 
@@ -44,12 +47,23 @@ namespace StockBot.KiwoomAPI
 
         private void axKHOpenAPI1_OnReceiveRealCondition(object sender, AxKHOpenAPILib._DKHOpenAPIEvents_OnReceiveRealConditionEvent e)
         {
-
+            logger.Debug("axKHOpenAPI1_OnReceiveRealCondition");
         }
 
         private void axKHOpenAPI1_OnReceiveTrCondition(object sender, AxKHOpenAPILib._DKHOpenAPIEvents_OnReceiveTrConditionEvent e)
         {
+            logger.Debug("axKHOpenAPI1_OnReceiveTrCondition");
+            logger.Debug(e.strCodeList);
+            string[] itemCodeList = e.strCodeList.TrimEnd(';').Split(';');
+            foreach (string itemCode in itemCodeList)
+            {
+                if (itemCode.Length > 0)
+                {
+                    this.opt10001EventHandler.requestTrOpt10001(itemCode, $"관심종목저장TR요청_{e.strConditionName}");
+                }
 
+                Thread.Sleep(3000);
+            }
         }
 
         private void axKHOpenAPI1_OnReceiveConditionVer(object sender, AxKHOpenAPILib._DKHOpenAPIEvents_OnReceiveConditionVerEvent e)
@@ -57,10 +71,9 @@ namespace StockBot.KiwoomAPI
             logger.Debug("axKHOpenAPI1_OnReceiveConditionVer");
             string conditionList = axKHOpenAPI1.GetConditionNameList();
 
-            logger.Info("사용자 조건식 조회 완료");
-            List<Condition> jsonConditions = new List<Condition>();
+            logger.Info("사용자 조건식 로딩 완료");
 
-            string[] conditionArray = conditionList.Split(';');
+            string[] conditionArray = conditionList.TrimEnd(';').Split(';');
 
             foreach (string conditionInfo in conditionArray)
             {
@@ -75,19 +88,25 @@ namespace StockBot.KiwoomAPI
             }
         }
 
-        public void test()
+        public int searchItems(string name)
         {
-            logger.Debug("test");
-        }
+            logger.Debug("searchTodayJumpItem");
+            foreach(Condition item in this.conditionList)
+            {
+                if(item.name.Equals(name))
+                {
+                    axKHOpenAPI1.SendCondition(
+                        "2000",
+                        item.name,
+                        item.index,
+                        0
+                    );
+                    
+                    break;
+                }
+            }
 
-        public void searchTodayJumpItem()
-        {
-
-        }
-
-        public void searchYesterdayHighestVolumeItem()
-        {
-
+            return 0;
         }
     }
 }

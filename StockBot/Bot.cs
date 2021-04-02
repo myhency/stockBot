@@ -52,6 +52,7 @@ namespace StockBot
                  *  - Handler 들을 초기화한다?
                  */
                 logger.Info("로그인 성공.");
+                toolStripStatusLabel.Text = $"로그인 성공. {DateTime.Now}";
                 var db = connectionFactory();
                 db.Open();
                 conditionEventHandler = new ConditionEventHandler(this, axKHOpenAPI1);

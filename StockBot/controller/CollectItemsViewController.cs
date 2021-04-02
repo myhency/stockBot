@@ -37,7 +37,7 @@ namespace StockBot.controller
         private void todayJumpItemButton_Click(object sender, EventArgs e)
         {
             logger.Debug("todayJumpItemButton_Click");
-            this.conditionEventHandler.test();
+            this.conditionEventHandler.searchTodayJumpItem();
         }
 
         private void yesterdayHighestVolumeItemButton_Click(object sender, EventArgs e)

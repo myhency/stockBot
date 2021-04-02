@@ -79,5 +79,15 @@ namespace StockBot.KiwoomAPI
         {
             logger.Debug("test");
         }
+
+        public void searchTodayJumpItem()
+        {
+
+        }
+
+        public void searchYesterdayHighestVolumeItem()
+        {
+
+        }
     }
 }

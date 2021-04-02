@@ -66,6 +66,9 @@ namespace StockBot
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -74,6 +77,7 @@ namespace StockBot
             ((System.ComponentModel.ISupportInitialize)(this.axKHOpenAPI1)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -114,7 +118,7 @@ namespace StockBot
             this.tabControl1.Location = new System.Drawing.Point(0, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(803, 424);
+            this.tabControl1.Size = new System.Drawing.Size(803, 400);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage3
@@ -204,16 +208,16 @@ namespace StockBot
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(795, 398);
+            this.tabPage1.Size = new System.Drawing.Size(795, 374);
             this.tabPage1.TabIndex = 4;
             this.tabPage1.Text = "종목수집";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // yesterdayHighestVolumeItemButton
             // 
-            this.yesterdayHighestVolumeItemButton.Location = new System.Drawing.Point(9, 36);
+            this.yesterdayHighestVolumeItemButton.Location = new System.Drawing.Point(9, 39);
             this.yesterdayHighestVolumeItemButton.Name = "yesterdayHighestVolumeItemButton";
-            this.yesterdayHighestVolumeItemButton.Size = new System.Drawing.Size(129, 23);
+            this.yesterdayHighestVolumeItemButton.Size = new System.Drawing.Size(130, 23);
             this.yesterdayHighestVolumeItemButton.TabIndex = 1;
             this.yesterdayHighestVolumeItemButton.Text = "어제 신고거래량";
             this.yesterdayHighestVolumeItemButton.UseVisualStyleBackColor = true;
@@ -279,7 +283,7 @@ namespace StockBot
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(145, 41);
+            this.label2.Location = new System.Drawing.Point(145, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(251, 12);
             this.label2.TabIndex = 3;
@@ -387,11 +391,33 @@ namespace StockBot
             this.tabPage5.Text = "잔고";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripProgressBar1,
+            this.toolStripStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 430);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(803, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+            // 
+            // toolStripStatusLabel
+            // 
+            this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
+            // 
             // Bot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(803, 452);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -409,6 +435,8 @@ namespace StockBot
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -452,6 +480,9 @@ namespace StockBot
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
     }
 }
 

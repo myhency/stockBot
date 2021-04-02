@@ -13,5 +13,7 @@ namespace StockBot.view
         Button getTodayJumpItemButton();
         Button getYesterdayHighestVolumeItemButton();
         ConditionEventHandler getConditionEventHandler();
+        ToolStripProgressBar getToolStripProgressBar();
+        ToolStripStatusLabel getToolStripStatusLabel();
     }
 }

@@ -17,6 +17,8 @@ namespace StockBot.controller
         private ConditionEventHandler conditionEventHandler;
         private Button todayJumpItemButton;
         private Button yesterdayHighestVolumeItemButton;
+        private ToolStripProgressBar toolStripProgressBar;
+        private ToolStripStatusLabel toolStripStatusLabel;
 
         public CollectItemsViewController(ICollectItemsView iCollectItemView)
         {
@@ -29,6 +31,7 @@ namespace StockBot.controller
             this.conditionEventHandler = iCollectItemView.getConditionEventHandler();
             this.todayJumpItemButton = iCollectItemView.getTodayJumpItemButton();
             this.yesterdayHighestVolumeItemButton = iCollectItemView.getYesterdayHighestVolumeItemButton();
+            this.toolStripProgressBar = iCollectItemView.getToolStripProgressBar();
 
             this.todayJumpItemButton.Click += todayJumpItemButton_Click;
             this.yesterdayHighestVolumeItemButton.Click += yesterdayHighestVolumeItemButton_Click;
@@ -36,8 +39,11 @@ namespace StockBot.controller
 
         private void todayJumpItemButton_Click(object sender, EventArgs e)
         {
+            this.toolStripProgressBar.Value = 0;
             logger.Debug("todayJumpItemButton_Click");
             this.conditionEventHandler.searchTodayJumpItem();
+            this.toolStripStatusLabel.Text = "조회완료.";
+            this.toolStripProgressBar.Value = 100;
         }
 
         private void yesterdayHighestVolumeItemButton_Click(object sender, EventArgs e)

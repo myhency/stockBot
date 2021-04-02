@@ -31,3 +31,30 @@
 2021-04-02 15:57:07.0785 [DEBUG] test
 2021-04-02 15:57:11.0513 [DEBUG] todayJumpItemButton_Click
 2021-04-02 15:57:11.0583 [DEBUG] test
+2021-04-02 16:09:39.8158 [INFO] 로그인 시도 중...
+2021-04-02 16:09:50.8667 [INFO] 로그인 성공.
+2021-04-02 16:09:55.3019 [DEBUG] axKHOpenAPI1_OnReceiveConditionVer
+2021-04-02 16:09:55.3209 [INFO] 사용자 조건식 조회 완료
+2021-04-02 16:16:18.8701 [INFO] 로그인 시도 중...
+2021-04-02 16:16:26.2147 [INFO] 로그인 성공. 2021-04-02 오후 4:16:26
+2021-04-02 16:16:28.0412 [DEBUG] axKHOpenAPI1_OnReceiveConditionVer
+2021-04-02 16:16:28.0602 [INFO] 사용자 조건식 조회 완료
+2021-04-02 16:19:22.6225 [INFO] 로그인 시도 중...
+2021-04-02 16:19:29.6241 [INFO] 로그인 성공. 2021-04-02 오후 4:19:29
+2021-04-02 16:19:31.4682 [DEBUG] axKHOpenAPI1_OnReceiveConditionVer
+2021-04-02 16:19:31.4881 [INFO] 사용자 조건식 조회 완료
+2021-04-02 16:21:29.1017 [INFO] 로그인 시도 중...
+2021-04-02 16:21:36.1020 [INFO] 로그인 성공. 2021-04-02 오후 4:21:36
+2021-04-02 16:21:37.9071 [DEBUG] axKHOpenAPI1_OnReceiveConditionVer
+2021-04-02 16:21:37.9291 [INFO] 사용자 조건식 조회 완료
+2021-04-02 16:24:40.7187 [INFO] 로그인 시도 중...
+2021-04-02 16:24:51.8041 [INFO] 로그인 성공. 2021-04-02 오후 4:24:51
+2021-04-02 16:24:53.5977 [DEBUG] axKHOpenAPI1_OnReceiveConditionVer
+2021-04-02 16:24:53.6177 [INFO] 사용자 조건식 조회 완료
+2021-04-02 16:25:00.9534 [DEBUG] todayJumpItemButton_Click
+2021-04-02 16:25:06.5441 [DEBUG] todayJumpItemButton_Click
+2021-04-02 16:25:08.2565 [DEBUG] todayJumpItemButton_Click
+2021-04-02 16:25:09.6403 [DEBUG] todayJumpItemButton_Click
+2021-04-02 16:25:10.7922 [DEBUG] todayJumpItemButton_Click
+2021-04-02 16:25:11.7210 [DEBUG] todayJumpItemButton_Click
+2021-04-02 16:25:12.6172 [DEBUG] todayJumpItemButton_Click

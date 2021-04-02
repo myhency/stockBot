@@ -5,3 +5,21 @@
 2021-04-02 00:49:21.1316 [INFO] 로그인 시도 중...
 2021-04-02 00:49:32.9352 [INFO] 로그인 성공.
 2021-04-02 00:49:33.2574 [INFO] stockdb
+2021-04-02 14:54:28.7125 [INFO] 로그인 시도 중...
+2021-04-02 14:55:03.0573 [INFO] 로그인 성공.
+2021-04-02 14:59:06.5429 [INFO] 로그인 시도 중...
+2021-04-02 14:59:13.9785 [INFO] 로그인 성공.
+2021-04-02 14:59:15.9181 [INFO] axKHOpenAPI1_OnReceiveConditionVer
+2021-04-02 15:41:05.6839 [INFO] 로그인 시도 중...
+2021-04-02 15:41:17.1861 [INFO] 로그인 성공.
+2021-04-02 15:41:19.1397 [DEBUG] axKHOpenAPI1_OnReceiveConditionVer
+2021-04-02 15:41:19.1602 [INFO] 사용자 조건식 조회 완료
+2021-04-02 15:45:22.8122 [INFO] 로그인 시도 중...
+2021-04-02 15:45:34.5525 [INFO] 로그인 성공.
+2021-04-02 15:45:36.5231 [DEBUG] axKHOpenAPI1_OnReceiveConditionVer
+2021-04-02 15:45:36.5451 [INFO] 사용자 조건식 조회 완료
+2021-04-02 15:46:06.7732 [DEBUG] todayJumpItemButton_Click
+2021-04-02 15:46:09.6053 [DEBUG] yesterdayHighestVolumeItemButton_Click
+2021-04-02 15:46:12.3245 [DEBUG] todayJumpItemButton_Click
+2021-04-02 15:46:13.7328 [DEBUG] yesterdayHighestVolumeItemButton_Click
+2021-04-02 15:46:15.3158 [DEBUG] todayJumpItemButton_Click

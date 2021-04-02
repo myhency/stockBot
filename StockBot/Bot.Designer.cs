@@ -41,8 +41,8 @@ namespace StockBot
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.axKHOpenAPI1 = new AxKHOpenAPILib.AxKHOpenAPI();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.yesterdayHighestVolumeItemButton = new System.Windows.Forms.Button();
+            this.todayJumpItemButton = new System.Windows.Forms.Button();
             this.createdAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +65,7 @@ namespace StockBot
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -105,6 +106,7 @@ namespace StockBot
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -197,8 +199,8 @@ namespace StockBot
             // 
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.yesterdayHighestVolumeItemButton);
+            this.tabPage1.Controls.Add(this.todayJumpItemButton);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -207,23 +209,23 @@ namespace StockBot
             this.tabPage1.Text = "종목수집";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // yesterdayHighestVolumeItemButton
             // 
-            this.button2.Location = new System.Drawing.Point(9, 36);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "어제 신고거래량";
-            this.button2.UseVisualStyleBackColor = true;
+            this.yesterdayHighestVolumeItemButton.Location = new System.Drawing.Point(9, 36);
+            this.yesterdayHighestVolumeItemButton.Name = "yesterdayHighestVolumeItemButton";
+            this.yesterdayHighestVolumeItemButton.Size = new System.Drawing.Size(129, 23);
+            this.yesterdayHighestVolumeItemButton.TabIndex = 1;
+            this.yesterdayHighestVolumeItemButton.Text = "어제 신고거래량";
+            this.yesterdayHighestVolumeItemButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // todayJumpItemButton
             // 
-            this.button1.Location = new System.Drawing.Point(8, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "오늘 급등주";
-            this.button1.UseVisualStyleBackColor = true;
+            this.todayJumpItemButton.Location = new System.Drawing.Point(8, 8);
+            this.todayJumpItemButton.Name = "todayJumpItemButton";
+            this.todayJumpItemButton.Size = new System.Drawing.Size(130, 23);
+            this.todayJumpItemButton.TabIndex = 0;
+            this.todayJumpItemButton.Text = "오늘 급등주";
+            this.todayJumpItemButton.UseVisualStyleBackColor = true;
             // 
             // createdAt
             // 
@@ -375,6 +377,16 @@ namespace StockBot
             this.tabPage2.Text = "설정";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(795, 398);
+            this.tabPage5.TabIndex = 6;
+            this.tabPage5.Text = "잔고";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
             // Bot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -413,8 +425,8 @@ namespace StockBot
         private System.Windows.Forms.TabPage tabPage4;
         private AxKHOpenAPILib.AxKHOpenAPI axKHOpenAPI1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button yesterdayHighestVolumeItemButton;
+        private System.Windows.Forms.Button todayJumpItemButton;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn createdAt;
@@ -439,6 +451,7 @@ namespace StockBot
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage5;
     }
 }
 

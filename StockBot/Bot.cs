@@ -1,4 +1,7 @@
 ﻿using NLog;
+using StockBot.controller;
+using StockBot.KiwoomAPI;
+using StockBot.view;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,13 +14,16 @@ using System.Windows.Forms;
 
 namespace StockBot
 {
-    public partial class Bot : Form
+    public partial class Bot : Form, ICollectItemsView
     {
         /**
          * NLog 이용방법 참고
          *  - https://m.blog.naver.com/PostView.nhn?blogId=sang9151&logNo=221222810693&proxyReferer=https:%2F%2Fwww.google.com%2F
          */
         private static Logger logger = LogManager.GetCurrentClassLogger();
+
+        private ConditionEventHandler conditionEventHandler;
+        private CollectItemsViewController collectItemsViewController;
 
         public Bot()
         {
@@ -48,6 +54,8 @@ namespace StockBot
                 logger.Info("로그인 성공.");
                 var db = connectionFactory();
                 db.Open();
+                conditionEventHandler = new ConditionEventHandler(this, axKHOpenAPI1);
+                collectItemsViewController = new CollectItemsViewController(this);
             }
         }
 
@@ -65,9 +73,14 @@ namespace StockBot
             return db;
         }
 
-        public string printTest()
+        public Button getTodayJumpItemButton()
         {
-            return "abc";
+            return todayJumpItemButton;
+        }
+
+        public Button getYesterdayHighestVolumeItemButton()
+        {
+            return yesterdayHighestVolumeItemButton;
         }
     }
 }

@@ -51,7 +51,9 @@ namespace StockBot.KiwoomAPI
                 logger.Debug(e.sTrCode);
                 logger.Debug(e.sRQName);
 
-                //saveItemInfo(opt10001VO, conditionName);
+                string conditionName = e.sRQName.Split('_')[2];
+
+                saveItemInfo(opt10001VO, conditionName);
             }
         }
 
@@ -165,8 +167,6 @@ namespace StockBot.KiwoomAPI
 
         private Opt10001VO getOpt10001VO(string sTrCode, string sRQName)
         {
-            logger.Debug(sTrCode);
-            logger.Debug(axKHOpenAPI1.GetCommData(sTrCode, sRQName, 0, "종목코드").Trim());
             Opt10001VO opt10001VO = new Opt10001VO();
             opt10001VO.종목코드 = axKHOpenAPI1.GetCommData(sTrCode, sRQName, 0, "종목코드").Trim();
             opt10001VO.종목명 = axKHOpenAPI1.GetCommData(sTrCode, sRQName, 0, "종목명").Trim();

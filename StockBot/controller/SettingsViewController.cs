@@ -29,15 +29,20 @@ namespace StockBot.controller
         {
             this.iSettingsView = iSettingsView;
             this.iAccountAlarmView = iAccountAlarmView;
-            this.accountEventHandler = iAccountAlarmView.getAccountEventHandler();
-            this.noMonitoringAccountListBox = iSettingsView.getNoMonitoringAccountListBox();
-            this.monitoringAccountListBox = iSettingsView.getMonitoringAccountListBox();
 
             initialize();
         }
 
         private void initialize()
         {
+            this.accountEventHandler = iAccountAlarmView.getAccountEventHandler();
+            this.noMonitoringAccountListBox = iSettingsView.getNoMonitoringAccountListBox();
+            this.monitoringAccountListBox = iSettingsView.getMonitoringAccountListBox();
+            this.addAccountToMonitoringButton = iSettingsView.getAddAccountToMonitoringButton();
+            this.deleteAccountToMonitoringButton = iSettingsView.getDeleteAccountToMonitoringButton();
+            this.addAccountToMonitoringButton.Click += addAccountToMonitoringButton_Click;
+            this.deleteAccountToMonitoringButton.Click += deleteAccountToMonitoringButton_Click;
+
             /**
              * ListBox 가 초기화 되는 과정
              *  - 우선 GetLoginInfo("ACCLIST"); 로 가져온다
@@ -82,6 +87,44 @@ namespace StockBot.controller
                         noMonitoringAccountListBox.Items.Add(account.accountNumber);
                     }
                 }
+            }
+        }
+
+        private void addAccountToMonitoringButton_Click(object sender, EventArgs e)
+        {
+            /**
+             * addAccountToMonitoringButton 눌렀을 때 실행과정
+             *  - 만약에 사용자가 noMonitoringAccountListBox 에서 아무것도 선택을 안했을 때 알람을 띄운다.
+             *  - 선택된 아이템이 있으면 monitoringAccountListBox 로 추가해준다.
+             */
+            if(noMonitoringAccountListBox.SelectedIndex == -1)
+            {
+                logger.Info("계좌를 선택하지 않았습니다.");
+            } 
+            else
+            {
+                logger.Info($"{noMonitoringAccountListBox.SelectedItem} 계좌를 감시합니다.");
+                monitoringAccountListBox.Items.Add(noMonitoringAccountListBox.SelectedItem);
+                noMonitoringAccountListBox.Items.Remove(noMonitoringAccountListBox.SelectedItem);
+            }
+        }
+
+        private void deleteAccountToMonitoringButton_Click(object sender, EventArgs e)
+        {
+            /**
+             * addAccountToMonitoringButton 눌렀을 때 실행과정
+             *  - 만약에 사용자가 noMonitoringAccountListBox 에서 아무것도 선택을 안했을 때 알람을 띄운다.
+             *  - 선택된 아이템이 있으면 monitoringAccountListBox 로 추가해준다.
+             */
+            if (monitoringAccountListBox.SelectedIndex == -1)
+            {
+                logger.Info("계좌를 선택하지 않았습니다.");
+            }
+            else
+            {
+                logger.Info($"{monitoringAccountListBox.SelectedItem} 계좌를 감시해제 합니다.");
+                noMonitoringAccountListBox.Items.Add(monitoringAccountListBox.SelectedItem);
+                monitoringAccountListBox.Items.Remove(monitoringAccountListBox.SelectedItem);
             }
         }
     }

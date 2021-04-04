@@ -16,15 +16,5 @@ namespace StockBot.Tests
         {
             Assert.Fail();
         }
-
-        [TestMethod()]
-        public void printTestTest()
-        {
-            //given
-            string str = "abc";
-            var bot = new Bot();
-            string expected = bot.printTest();
-            Assert.AreEqual(expected, str);
-        }
     }
 }

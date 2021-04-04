@@ -40,21 +40,20 @@ namespace StockBot.controller
 
         private void todayJumpItemButton_Click(object sender, EventArgs e)
         {
-            this.toolStripProgressBar.Value = 0;
-            this.toolStripStatusLabel.Text = "조회중...";
+            this.toolStripProgressBar.Value = 10;
             logger.Debug("todayJumpItemButton_Click");
-            this.conditionEventHandler.searchItems("총총걸음");
-            this.toolStripStatusLabel.Text = "조회완료.";
-            this.toolStripProgressBar.Value = 100;
+            this.conditionEventHandler.searchItems("총총걸음", complete);
         }
 
         private void yesterdayHighestVolumeItemButton_Click(object sender, EventArgs e)
         {
-            this.toolStripProgressBar.Value = 0;
-            this.toolStripStatusLabel.Text = "조회중...";
+            this.toolStripProgressBar.Value = 10;
             logger.Debug("yesterdayHighestVolumeItemButton_Click");
-            this.conditionEventHandler.searchItems("어제돈이몰린종목");
-            this.toolStripStatusLabel.Text = "조회완료.";
+            this.conditionEventHandler.searchItems("어제돈이몰린종목", complete);
+        }
+
+        private void complete()
+        {
             this.toolStripProgressBar.Value = 100;
         }
     }

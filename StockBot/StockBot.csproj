@@ -128,9 +128,13 @@
     <Compile Include="Bot.Designer.cs">
       <DependentUpon>Bot.cs</DependentUpon>
     </Compile>
+    <Compile Include="controller\AccountAlarmViewController.cs" />
     <Compile Include="controller\CollectItemsViewController.cs" />
+    <Compile Include="controller\SettingsViewController.cs" />
+    <Compile Include="KiwoomAPI\AccountEventHandler.cs" />
     <Compile Include="KiwoomAPI\ConditionEventHandler.cs" />
     <Compile Include="KiwoomAPI\Opt10001EventHandler.cs" />
+    <Compile Include="model\Account.cs" />
     <Compile Include="model\Condition.cs" />
     <Compile Include="model\Opt10001VO.cs" />
     <Compile Include="Program.cs" />
@@ -138,7 +142,9 @@
     <Compile Include="utils\GoogleSheet.cs" />
     <Compile Include="utils\GoogleSheetHelper.cs" />
     <Compile Include="utils\MariaDB.cs" />
+    <Compile Include="view\IAccountAlarmView.cs" />
     <Compile Include="view\ICollectItemsView.cs" />
+    <Compile Include="view\ISettingsView.cs" />
     <EmbeddedResource Include="Bot.resx">
       <DependentUpon>Bot.cs</DependentUpon>
     </EmbeddedResource>

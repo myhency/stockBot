@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace StockBot
 {
-    public partial class Bot : Form, ICollectItemsView
+    public partial class Bot : Form, ICollectItemsView, IAccountAlarmView, ISettingsView
     {
         /**
          * NLog 이용방법 참고
@@ -17,6 +17,9 @@ namespace StockBot
 
         private ConditionEventHandler conditionEventHandler;
         private CollectItemsViewController collectItemsViewController;
+        private AccountEventHandler accountEventHandler;
+        private AccountAlarmViewController accountAlarmViewController;
+        private SettingsViewController settingsViewController;
 
         public Bot()
         {
@@ -54,10 +57,11 @@ namespace StockBot
 
                 conditionEventHandler = new ConditionEventHandler(this, axKHOpenAPI1);
                 collectItemsViewController = new CollectItemsViewController(this);
+                accountEventHandler = new AccountEventHandler(this, axKHOpenAPI1);
+                accountAlarmViewController = new AccountAlarmViewController(this);
+                settingsViewController = new SettingsViewController(this, this);
             }
         }
-
-        
 
         public Button getTodayJumpItemButton()
         {
@@ -82,6 +86,36 @@ namespace StockBot
         public ToolStripStatusLabel getToolStripStatusLabel()
         {
             return toolStripStatusLabel;
+        }
+
+        public Button getStartAccountAlarmButton()
+        {
+            return startAccountAlarmButton;
+        }
+
+        public AccountEventHandler getAccountEventHandler()
+        {
+            return this.accountEventHandler;
+        }
+
+        public ListBox getNoMonitoringAccountListBox()
+        {
+            return noMonitoringAccountListBox;
+        }
+
+        public ListBox getMonitoringAccountListBox()
+        {
+            return monitoringAccountListBox;
+        }
+
+        public Button getAddAccountToMonitoringButton()
+        {
+            return addAccountToMonitoringButton;
+        }
+
+        public Button getDeleteAccountToMonitoringButton()
+        {
+            return deleteAccountToMonitoringButton;
         }
     }
 }

@@ -16,6 +16,7 @@ namespace StockBot.KiwoomAPI
         private AxKHOpenAPILib.AxKHOpenAPI axKHOpenAPI1;
         private List<Condition> conditionList;
         private Opt10001EventHandler opt10001EventHandler;
+        public delegate void onComplete();
 
         public ConditionEventHandler(object sender, AxKHOpenAPI axKHOpenAPI1)
         {
@@ -88,7 +89,7 @@ namespace StockBot.KiwoomAPI
             }
         }
 
-        public int searchItems(string name)
+        public int searchItems(string name, onComplete onComplete)
         {
             logger.Debug("searchTodayJumpItem");
             foreach(Condition item in this.conditionList)
@@ -101,6 +102,8 @@ namespace StockBot.KiwoomAPI
                         item.index,
                         0
                     );
+
+                    onComplete();
                     
                     break;
                 }

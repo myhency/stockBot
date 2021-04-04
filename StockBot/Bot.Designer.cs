@@ -70,6 +70,15 @@ namespace StockBot
             this.toolStripProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.startAccountAlarmButton = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.noMonitoringAccountListBox = new System.Windows.Forms.ListBox();
+            this.monitoringAccountListBox = new System.Windows.Forms.ListBox();
+            this.addAccountToMonitoringButton = new System.Windows.Forms.Button();
+            this.deleteAccountToMonitoringButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -79,7 +88,10 @@ namespace StockBot
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axKHOpenAPI1)).BeginInit();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -125,6 +137,7 @@ namespace StockBot
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.startAccountAlarmButton);
             this.tabPage5.Controls.Add(this.tableLayoutPanel1);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
@@ -343,7 +356,7 @@ namespace StockBot
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(795, 374);
+            this.tabPage1.Size = new System.Drawing.Size(824, 403);
             this.tabPage1.TabIndex = 4;
             this.tabPage1.Text = "종목수집";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -386,10 +399,11 @@ namespace StockBot
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.flowLayoutPanel1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(795, 374);
+            this.tabPage2.Size = new System.Drawing.Size(824, 403);
             this.tabPage2.TabIndex = 5;
             this.tabPage2.Text = "설정";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -423,12 +437,104 @@ namespace StockBot
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 228);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(824, 403);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(824, 175);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // startAccountAlarmButton
+            // 
+            this.startAccountAlarmButton.Location = new System.Drawing.Point(9, 7);
+            this.startAccountAlarmButton.Name = "startAccountAlarmButton";
+            this.startAccountAlarmButton.Size = new System.Drawing.Size(114, 23);
+            this.startAccountAlarmButton.TabIndex = 1;
+            this.startAccountAlarmButton.Text = "잔고알리미 시작";
+            this.startAccountAlarmButton.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Controls.Add(this.groupBox1);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(818, 397);
+            this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.WrapContents = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.deleteAccountToMonitoringButton);
+            this.groupBox1.Controls.Add(this.addAccountToMonitoringButton);
+            this.groupBox1.Controls.Add(this.monitoringAccountListBox);
+            this.groupBox1.Controls.Add(this.noMonitoringAccountListBox);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(810, 129);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "계좌설정";
+            // 
+            // noMonitoringAccountListBox
+            // 
+            this.noMonitoringAccountListBox.FormattingEnabled = true;
+            this.noMonitoringAccountListBox.ItemHeight = 12;
+            this.noMonitoringAccountListBox.Location = new System.Drawing.Point(7, 44);
+            this.noMonitoringAccountListBox.Name = "noMonitoringAccountListBox";
+            this.noMonitoringAccountListBox.Size = new System.Drawing.Size(299, 76);
+            this.noMonitoringAccountListBox.TabIndex = 0;
+            // 
+            // monitoringAccountListBox
+            // 
+            this.monitoringAccountListBox.FormattingEnabled = true;
+            this.monitoringAccountListBox.ItemHeight = 12;
+            this.monitoringAccountListBox.Location = new System.Drawing.Point(505, 44);
+            this.monitoringAccountListBox.Name = "monitoringAccountListBox";
+            this.monitoringAccountListBox.Size = new System.Drawing.Size(299, 76);
+            this.monitoringAccountListBox.TabIndex = 1;
+            // 
+            // addAccountToMonitoringButton
+            // 
+            this.addAccountToMonitoringButton.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.addAccountToMonitoringButton.Location = new System.Drawing.Point(370, 49);
+            this.addAccountToMonitoringButton.Name = "addAccountToMonitoringButton";
+            this.addAccountToMonitoringButton.Size = new System.Drawing.Size(75, 30);
+            this.addAccountToMonitoringButton.TabIndex = 2;
+            this.addAccountToMonitoringButton.Text = ">>>>>";
+            this.addAccountToMonitoringButton.UseVisualStyleBackColor = true;
+            // 
+            // deleteAccountToMonitoringButton
+            // 
+            this.deleteAccountToMonitoringButton.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.deleteAccountToMonitoringButton.Location = new System.Drawing.Point(370, 83);
+            this.deleteAccountToMonitoringButton.Name = "deleteAccountToMonitoringButton";
+            this.deleteAccountToMonitoringButton.Size = new System.Drawing.Size(75, 30);
+            this.deleteAccountToMonitoringButton.TabIndex = 3;
+            this.deleteAccountToMonitoringButton.Text = "<<<<<";
+            this.deleteAccountToMonitoringButton.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 12);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "비 감시대상";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(505, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "감시대상";
             // 
             // Bot
             // 
@@ -454,8 +560,12 @@ namespace StockBot
             ((System.ComponentModel.ISupportInitialize)(this.axKHOpenAPI1)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -503,6 +613,15 @@ namespace StockBot
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button startAccountAlarmButton;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button deleteAccountToMonitoringButton;
+        private System.Windows.Forms.Button addAccountToMonitoringButton;
+        private System.Windows.Forms.ListBox monitoringAccountListBox;
+        private System.Windows.Forms.ListBox noMonitoringAccountListBox;
     }
 }
 

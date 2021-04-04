@@ -2,6 +2,7 @@
 using StockBot.model;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,8 +12,15 @@ namespace StockBot.utils
     public class GoogleSheet
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
-        private int rangeRowStart = 2;
-        private string sheetName = "관심종목";
+        private int rangeRowStart;
+        private string sheetName;
+
+        public GoogleSheet()
+        {
+            this.rangeRowStart = getLastRowNumber();
+            this.sheetName = "관심종목";
+        }
+
         public void updateCodeListToGoogleSheet(Opt10001VO opt10001VO, string conditionName)
         {
             var gsh = new GoogleSheetsHelper("swing-293507-ca9c2651b2d1.json", "13I2pgJbXZjuqX8EbI3WnNCCuK8j3HpFNbqyAQypEYYg");
@@ -37,6 +45,26 @@ namespace StockBot.utils
             gsh.AddCells(new GoogleSheetParameters() { SheetName = sheetName, RangeColumnStart = 1, RangeRowStart = rangeRowStart }, rows);
             rangeRowStart++;
             logger.Info($"{opt10001VO.종목명} 업데이트 완료 ({rangeRowStart})");
+        }
+
+        public int getLastRowNumber()
+        {
+            var gsh = new GoogleSheetsHelper("swing-293507-ca9c2651b2d1.json", "13I2pgJbXZjuqX8EbI3WnNCCuK8j3HpFNbqyAQypEYYg");
+            var gsp = new GoogleSheetParameters() { RangeColumnStart = 17, RangeRowStart = 2, RangeColumnEnd = 17, RangeRowEnd = 2, FirstRowIsHeaders = false, SheetName = "관심종목" };
+            var rowValues = gsh.GetDataFromSheet(gsp);
+
+            string result = "2";
+
+            foreach(var item in rowValues)
+            {
+                var dict = (IDictionary<string, object>)item;
+                foreach(var d in dict)
+                {
+                    result = d.Value.ToString();
+                }
+            }
+
+            return int.Parse(result) + 1;
         }
     }
 }

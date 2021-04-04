@@ -1,13 +1,8 @@
 ﻿using AxKHOpenAPILib;
-using MySql.Data.MySqlClient;
 using NLog;
 using StockBot.model;
 using StockBot.utils;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StockBot.KiwoomAPI
 {

@@ -82,6 +82,7 @@ namespace StockBot
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -471,6 +472,7 @@ namespace StockBot
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -571,6 +573,17 @@ namespace StockBot
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.ForeColor = System.Drawing.Color.DarkRed;
+            this.label6.Location = new System.Drawing.Point(7, 145);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(294, 11);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "* 저장 버튼을 클릭하면 이후에는 설정할 필요가 없습니다.";
+            // 
             // Bot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -660,6 +673,7 @@ namespace StockBot
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label6;
     }
 }
 

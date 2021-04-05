@@ -71,7 +71,7 @@ namespace StockBot
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.monitoringAccountSaveButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -126,6 +126,7 @@ namespace StockBot
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -501,7 +502,7 @@ namespace StockBot
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.monitoringAccountSaveButton);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -527,14 +528,14 @@ namespace StockBot
             this.label6.TabIndex = 8;
             this.label6.Text = "* 저장 버튼을 클릭하면 이후에는 설정할 필요가 없습니다.";
             // 
-            // button1
+            // monitoringAccountSaveButton
             // 
-            this.button1.Location = new System.Drawing.Point(729, 126);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "저장";
-            this.button1.UseVisualStyleBackColor = true;
+            this.monitoringAccountSaveButton.Location = new System.Drawing.Point(729, 126);
+            this.monitoringAccountSaveButton.Name = "monitoringAccountSaveButton";
+            this.monitoringAccountSaveButton.Size = new System.Drawing.Size(75, 23);
+            this.monitoringAccountSaveButton.TabIndex = 7;
+            this.monitoringAccountSaveButton.Text = "저장";
+            this.monitoringAccountSaveButton.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -605,6 +606,7 @@ namespace StockBot
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.label30);
             this.groupBox2.Controls.Add(this.groupBox7);
             this.groupBox2.Controls.Add(this.groupBox6);
@@ -613,7 +615,7 @@ namespace StockBot
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Location = new System.Drawing.Point(3, 173);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(810, 315);
+            this.groupBox2.Size = new System.Drawing.Size(810, 290);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "거래설정";
@@ -690,7 +692,7 @@ namespace StockBot
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Location = new System.Drawing.Point(9, 50);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 112);
+            this.groupBox3.Size = new System.Drawing.Size(241, 112);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "계좌#1 설정";
@@ -705,7 +707,7 @@ namespace StockBot
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.textBox4);
             this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Location = new System.Drawing.Point(215, 50);
+            this.groupBox4.Location = new System.Drawing.Point(256, 50);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(271, 112);
             this.groupBox4.TabIndex = 6;
@@ -789,7 +791,7 @@ namespace StockBot
             this.groupBox5.Controls.Add(this.label18);
             this.groupBox5.Controls.Add(this.textBox7);
             this.groupBox5.Controls.Add(this.label19);
-            this.groupBox5.Location = new System.Drawing.Point(492, 50);
+            this.groupBox5.Location = new System.Drawing.Point(533, 50);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(271, 112);
             this.groupBox5.TabIndex = 8;
@@ -873,7 +875,7 @@ namespace StockBot
             this.groupBox6.Controls.Add(this.label23);
             this.groupBox6.Controls.Add(this.textBox9);
             this.groupBox6.Controls.Add(this.label24);
-            this.groupBox6.Location = new System.Drawing.Point(215, 168);
+            this.groupBox6.Location = new System.Drawing.Point(256, 168);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(271, 112);
             this.groupBox6.TabIndex = 9;
@@ -957,7 +959,7 @@ namespace StockBot
             this.groupBox7.Controls.Add(this.label28);
             this.groupBox7.Controls.Add(this.textBox11);
             this.groupBox7.Controls.Add(this.label29);
-            this.groupBox7.Location = new System.Drawing.Point(492, 168);
+            this.groupBox7.Location = new System.Drawing.Point(533, 168);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(271, 112);
             this.groupBox7.TabIndex = 10;
@@ -1041,6 +1043,15 @@ namespace StockBot
             this.label30.Size = new System.Drawing.Size(352, 11);
             this.label30.TabIndex = 9;
             this.label30.Text = "* 모든 계좌의 매수는 추천매수가로 부터 3분할로 나눠서 하게 됩니다.";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(729, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "저장";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Bot
             // 
@@ -1141,7 +1152,7 @@ namespace StockBot
         private System.Windows.Forms.ListBox monitoringAccountListBox;
         private System.Windows.Forms.ListBox noMonitoringAccountListBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button monitoringAccountSaveButton;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
@@ -1187,6 +1198,7 @@ namespace StockBot
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Button button1;
     }
 }
 

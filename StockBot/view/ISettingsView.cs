@@ -13,5 +13,6 @@ namespace StockBot.view
         ListBox getMonitoringAccountListBox();
         Button getAddAccountToMonitoringButton();
         Button getDeleteAccountToMonitoringButton();
+        Button getMonitoringAccountSaveButton();
     }
 }

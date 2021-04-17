@@ -117,5 +117,10 @@ namespace StockBot
         {
             return deleteAccountToMonitoringButton;
         }
+
+        public Button getMonitoringAccountSaveButton()
+        {
+            return monitoringAccountSaveButton;
+        }
     }
 }

@@ -197,5 +197,16 @@ namespace StockBot.controller
                 }
             }
         }
+
+        public List<String> getMonitoringAccountList()
+        {
+            List<String> result = new List<String>();
+            foreach (string item in monitoringAccountListBox.Items)
+            {
+                result.Add(item);
+            }
+
+            return result;
+        }
     }
 }

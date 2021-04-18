@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace StockBot
 {
-    public partial class Bot : Form, ICollectItemsView, IAccountAlarmView, ISettingsView
+    public partial class Bot : Form, ICollectItemsView, IAccountAlarmView, ISettingsView, IChejanView
     {
         /**
          * NLog 이용방법 참고
@@ -20,6 +20,8 @@ namespace StockBot
         private AccountEventHandler accountEventHandler;
         private AccountAlarmViewController accountAlarmViewController;
         private SettingsViewController settingsViewController;
+        private ChejanViewController chejanViewController;
+        private Opw00018EventHandler opw00018EventHandler;
 
         public Bot()
         {
@@ -55,11 +57,14 @@ namespace StockBot
                 logger.Info($"로그인 성공. {DateTime.Now}");
                 toolStripStatusLabel.Text = $"로그인 성공. {DateTime.Now}";
 
+                opw00018EventHandler = new Opw00018EventHandler(this, axKHOpenAPI1);
                 conditionEventHandler = new ConditionEventHandler(this, axKHOpenAPI1);
-                collectItemsViewController = new CollectItemsViewController(this);
                 accountEventHandler = new AccountEventHandler(this, axKHOpenAPI1);
+
+                collectItemsViewController = new CollectItemsViewController(this);
                 accountAlarmViewController = new AccountAlarmViewController(this);
                 settingsViewController = new SettingsViewController(this, this);
+                chejanViewController = new ChejanViewController(this);
             }
         }
 
@@ -121,6 +126,21 @@ namespace StockBot
         public Button getMonitoringAccountSaveButton()
         {
             return monitoringAccountSaveButton;
+        }
+
+        public ComboBox getChejanAccountListcomboBox()
+        {
+            return chejanAccountListcomboBox;
+        }
+
+        public Button getChejanAccountExplorerButton()
+        {
+            return chejanAccountExplorerButton;
+        }
+
+        public Opw00018EventHandler getOpw00018EventHandler()
+        {
+            return opw00018EventHandler;
         }
     }
 }
